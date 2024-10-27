@@ -54,8 +54,8 @@ const updateOrganizer = async (id, organizer, email, phone) => {
     if (data.rowCount < 1) {
       throw new ClientError(`Organizer with id ${id} not found`, 404);
     }
-    email = (email && email != '') ? email : data.rows[0].email
-    phone = (phone && phone != '') ? phone : data.rows[0].phone
+    email = email && email != "" ? email : data.rows[0].email;
+    phone = phone && phone != "" ? phone : data.rows[0].phone;
     let updateQuery = `UPDATE organizers SET organizer = '${organizer}', email = '${email}', phone = '${phone}', created_at = CURRENT_TIMESTAMP WHERE id = '${id}' RETURNING *`;
     data = await client.query(updateQuery);
 
@@ -66,7 +66,7 @@ const updateOrganizer = async (id, organizer, email, phone) => {
     }
     throw new ServerError(err.message);
   }
-}
+};
 
 const deleteOrganizer = async (id) => {
   let findQuery = `SELECT * FROM organizers WHERE id = '${id}'`;
@@ -77,13 +77,19 @@ const deleteOrganizer = async (id) => {
       throw new ClientError(`Organizer with id ${id} not found`, 404);
     }
     await client.query(deleteQuery);
-    return
+    return;
   } catch (err) {
     if (err instanceof ClientError) {
       throw err;
     }
     throw new ServerError(err.message);
   }
-}
+};
 
-export { getAllOrganizers, getSpecificOrganizer, addOrganizer, updateOrganizer, deleteOrganizer };
+export {
+  getAllOrganizers,
+  getSpecificOrganizer,
+  addOrganizer,
+  updateOrganizer,
+  deleteOrganizer,
+};

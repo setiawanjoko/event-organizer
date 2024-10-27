@@ -28,12 +28,15 @@ npm run start-dev
 - [x] `/organizers`
 - [ ] `/users`
 - [ ] `/user-affiliates`
-- [ ] `/events`
+- [x] `/events`
 - [ ] `/event-categories`
 - [ ] `/event-organizers`
 
 > [!WARNING]
-> All endpoint currently does not require any authentication or authorization
+> All endpoint currently does not require any authentication or authorization.
+
+> [!IMPORTANT]
+> Available endpoints may be changed to accomodate constraints. Please check commit message periodically.
 
 > [!NOTE]
 > This project is under development and may be abandoned at any moment.
