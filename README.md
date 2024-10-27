@@ -25,12 +25,15 @@ npm run start-dev
 
 ## Current available endpoints
 - [x] `/categories`
-- [ ] `/organizers`
+- [x] `/organizers`
 - [ ] `/users`
 - [ ] `/user-affiliates`
 - [ ] `/events`
 - [ ] `/event-categories`
 - [ ] `/event-organizers`
+
+> [!WARNING]
+> All endpoint currently does not require any authentication or authorization
 
 > [!NOTE]
 > This project is under development and may be abandoned at any moment.

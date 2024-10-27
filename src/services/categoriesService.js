@@ -49,7 +49,7 @@ const addCategory = async (category) => {
 
 const updateCategory = async (id, category) => {
   let findQuery = `SELECT * FROM categories WHERE id = '${id}'`;
-  let updateQuery = `UPDATE categories SET category = '${category}' WHERE id = '${id}' RETURNING *`;
+  let updateQuery = `UPDATE categories SET category = '${category}', updated_at = CURRENT_TIMESTAMP WHERE id = '${id}' RETURNING *`;
   try {
     let data = await client.query(findQuery);
     if (data.rowCount < 1) {
